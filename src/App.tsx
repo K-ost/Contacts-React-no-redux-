@@ -110,7 +110,7 @@ const App: React.FC = () => {
           {contacts?.map(el => <CardItem key={el.id} card={el} />)}
           
           {
-            totalCount >= 20 && contacts.length < totalCount
+            (contacts.length >= 20 && contacts.length === 0 || contacts.length < totalCount)
             ? <div className="maincontent-more">
               <CircularProgress />
             </div>
