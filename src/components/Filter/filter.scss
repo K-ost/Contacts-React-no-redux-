@@ -11,6 +11,11 @@
   .MuiFormControl-root {
     margin: 0 0 20px;
   }
+  .MuiButton-root .MuiCircularProgress-root {
+    margin-right: 8px;
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
 .filter-body {
   flex: 1;

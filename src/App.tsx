@@ -17,6 +17,7 @@ const App: React.FC = () => {
   const [count, setCount] = useState<number>(20)
   const { request } = useFetch()
   const [loading, setLoading] = useState<boolean>(true)
+  const [loadFilter, setLoadFilter] = useState<boolean>(false)
   const [filters, setFilters] = useState<string>('')
   const [searchFind, setSearchFind] = useState<string>('')
 
@@ -38,6 +39,7 @@ const App: React.FC = () => {
       setTotalCount(data.totalCount)
       setContacts(data.contacts)
       setLoading(false)
+      setLoadFilter(false)
     }
     if (token) {
       if (loading) getContacts()
@@ -93,12 +95,13 @@ const App: React.FC = () => {
     setFilters(`${tags}${notTags}${minMessagesSent}${maxMessagesSent}${minMessagesRecv}${maxMessagesRecv}`)
     setCount(20)
     setLoading(true)
+    setLoadFilter(true)
   }
   
 
   return (
     <Grid container spacing={0} className="app">
-      <Filter tags={tags} incFunc={incFunc} />
+      <Filter tags={tags} incFunc={incFunc} load={loadFilter} />
 
       <Grid item md={9} className="maincontent">
         <div className="maincontent-header">
@@ -110,7 +113,7 @@ const App: React.FC = () => {
           {contacts?.map(el => <CardItem key={el.id} card={el} />)}
           
           {
-            (contacts.length >= 20 && contacts.length === 0 || contacts.length < totalCount)
+            ((contacts.length >= 20 && contacts.length === 0) || contacts.length < totalCount)
             ? <div className="maincontent-more">
               <CircularProgress />
             </div>

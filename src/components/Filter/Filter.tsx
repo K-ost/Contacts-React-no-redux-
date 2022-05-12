@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Grid, TextField } from '@mui/material'
+import { Button, CircularProgress, Grid, TextField } from '@mui/material'
 import logo from '../../assets/svg/logo.svg'
 import { IFilterData, tag } from '../../interfaces'
 import './filter.scss'
@@ -8,9 +8,10 @@ import SelectItem from './SelectItem'
 export interface IFilter {
   tags: tag[]
   incFunc: (info: any) => void
+  load: boolean
 }
 
-const Filter: React.FC<IFilter> = ({ tags, incFunc }) => {
+const Filter: React.FC<IFilter> = ({ tags, incFunc, load }) => {
   const [valIncTags, setValIncTags] = useState<string>('')
   const [valExcTags, setValExcTags] = useState<string>('')
   const [sentMin, setSentMin] = useState<string>('')
@@ -62,7 +63,12 @@ const Filter: React.FC<IFilter> = ({ tags, incFunc }) => {
        
       </div>
       <div className="filter-footer">
-        <Button variant="contained" fullWidth onClick={saveFilters}>Save filters</Button>
+        <Button variant="contained" fullWidth onClick={saveFilters}>
+          {load
+            ? <><CircularProgress color="inherit" /> Loading...</>
+            : 'Save filters'
+          }
+        </Button>
       </div>
     </Grid>
   )
