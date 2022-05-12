@@ -1,0 +1,17 @@
+.aside {
+  display: flex;
+  flex-direction: column !important;
+  &-logo {
+    margin: 0 0 20px;
+    img {
+      display: block;
+      max-width: 50px;
+    }
+  }
+  .MuiFormControl-root {
+    margin: 0 0 20px;
+  }
+}
+.filter-body {
+  flex: 1;
+}

@@ -1,0 +1,35 @@
+/* cardItem */
+.cardItem {
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+  transition: all 200ms ease-in-out;
+  &-inner {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  &:hover {
+    background: #f1f1f1;
+  }
+  &-checked {
+    background: #e3e3e3;
+  }
+  h4 {margin: 0 0 8px;}
+  p {margin: 8px 0;}
+  &-details {margin-left: 16px;}
+  &-options {margin-left: auto; display: flex; align-items: center;}
+  &-tags {
+    text-align: right; margin-right: 20px;
+    .MuiChip-root {margin-left: 5px;}
+  }
+  .small {
+    color: #545454;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 2px;
+    b {color: #111;}
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
