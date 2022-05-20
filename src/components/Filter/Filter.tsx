@@ -44,26 +44,26 @@ const Filter: React.FC<IFilter> = ({ tags, incFunc, load }) => {
         <h4>Message sent:</h4>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <TextField id="sent-min" label="Min" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSentMin(e.target.value)} />
+            <TextField size="small" id="sent-min" label="Min" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSentMin(e.target.value)} />
           </Grid>
           <Grid item sm={6}>
-            <TextField id="sent-max" label="Max" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSentMax(e.target.value)} />
+            <TextField size="small" id="sent-max" label="Max" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSentMax(e.target.value)} />
           </Grid>
         </Grid>
 
         <h4>Message recieved:</h4>
         <Grid container spacing={2}>
           <Grid item xs={6}>
-            <TextField id="sent-min" label="Min" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecvMin(e.target.value)} />
+            <TextField size="small" id="sent-min" label="Min" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecvMin(e.target.value)} />
           </Grid>
           <Grid item sm={6}>
-            <TextField id="sent-max" label="Max" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecvMax(e.target.value)} />
+            <TextField size="small" id="sent-max" label="Max" variant="outlined" fullWidth onChange={(e: React.ChangeEvent<HTMLInputElement>) => setRecvMax(e.target.value)} />
           </Grid>
         </Grid>
        
       </div>
       <div className="filter-footer">
-        <Button variant="contained" fullWidth onClick={saveFilters}>
+        <Button variant="contained" color="success" fullWidth onClick={saveFilters}>
           {load
             ? <><CircularProgress color="inherit" /> Loading...</>
             : 'Save filters'

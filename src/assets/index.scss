@@ -5,6 +5,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+a {color: cornflowerblue;}
+p:first-child {margin-top: 0;}
 
 .app {
   height: 100vh;
@@ -38,4 +40,37 @@ body {
 /* empty */
 .empty {
   padding: 20px;
+}
+
+/* userpage */
+.userpage {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  h1 {
+    margin: 0 0 20px;
+  }
+}
+
+
+
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+  transition: opacity 250ms ease-out, transform 300ms ease;
 }
